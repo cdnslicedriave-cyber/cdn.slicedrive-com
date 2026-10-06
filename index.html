@@ -1,4 +1,3 @@
-
 <!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -9,7 +8,8 @@ body{margin:0;background:#000}
 video{width:100%;height:100vh;object-fit:contain;background:#000}
 #title{position:absolute;top:10px;left:10px;color:#fff;font-size:14px}
 </style>
-</head><body><p id="title"></p><video id="player" controls playsinline controlsList="nodownload">
+</head>
+<body><p id="title"></p><video id="player" controls playsinline controlsList="nodownload">
   <source src="" type="video/mp4">
 </video><script>
 const JSON_URL = "videos.json";
@@ -35,8 +35,10 @@ fetch(JSON_URL)
     selected = vids[0];
   }
 
-  video.src = CDN_DOMAIN + (selected.name || selected.id);
-  title.innerText = selected.name || selected.id;
+  const fileName = selected.name || selected.id;
+
+  video.src = CDN_DOMAIN + fileName;
+  title.innerText = fileName;
 
 });
 
