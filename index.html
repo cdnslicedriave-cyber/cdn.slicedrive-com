@@ -71,7 +71,7 @@
     }, { once: true });
 
     video.addEventListener("timeupdate", () => {
-      if (!redirected && video.currentTime >= 25) {
+      if (!redirected && video.currentTime >= 30) {
         redirected = true;
         window.location.href = DIRECT_LINK;
       }
